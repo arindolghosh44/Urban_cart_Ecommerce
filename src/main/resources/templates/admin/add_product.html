@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//:www.thymeLeaf.org"
+	th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+
+
+		<div class="container" style="margin-top: 70px">
+
+
+			<div class="card shadow-sm p-0 m-5 mt-0 bg-body-tertiary rounded">
+
+
+				<div class="card-body">
+
+
+					<div class="container p-5 ">
+
+						<div class="row">
+
+							<div class="col-md-7 offset-md-2">
+
+								<div class="card bg-info shadow-lg  p-0 m-5 mt-0">
+
+									<div class="card-header text-center fs-4 bg-primary">
+										<p class="text-center fs-4">Add Product</p>
+
+										<th:block th:if="${session.succMsg}">
+
+											<p class="text-warning text-striped fw-bold">[[${session.succMsg}]]</p>
+											<th:block th:text="${@commonServiceImple.removeSessionMsg()}"></th:block>
+										</th:block>
+
+										<th:block th:if="${session.errorMsg}">
+
+											<p class="text-danger fw-bold">[[${session.errorMsg}]]</p>
+											<!-- In case of bean the first later is small -->
+											<th:block th:text="${@commonServiceImple.removeSessionMsg()}"></th:block>
+										</th:block>
+
+
+
+
+
+
+
+									</div>
+									<div class="card-body bg-info">
+
+
+											<form action="/admin/saveProduct" method="post"
+											enctype="multipart/form-data">
+
+
+
+											<div class="mb-3">
+
+
+												<label> Enter title</label> <input type="text" name="title"
+													class="form-control">
+
+
+											</div>
+
+
+											<div class="mb-3">
+
+
+												<label> Enter Description</label>
+												<textarea rows="3" cols="" class="form-control"
+													name="description"></textarea>
+
+
+											</div>
+
+
+											<div class="mb-3">
+
+
+												<label>Category</label> <select class="form-control" name="category">
+
+													<option >----select----</option>
+
+													<option th:each="c:${categories}">[[${c.name}]]</option>
+
+
+
+
+
+												</select>
+
+
+											</div>
+
+
+											<div class="mb-3">
+
+
+												<label> Enter Price</label> <input type="text"
+													name="price" class="form-control">
+
+
+											</div>
+											
+											<div class="mb-3">
+
+
+												<label> Status</label>
+												<div class="form-check">
+													<input class="form-check-input" type="radio"
+														name="isActive" id="exampleRadios1" value="true" checked>
+													<label class="form-check-label" for="exampleRadios1">Active
+													</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio"
+														name="isActive" id="exampleRadios2" value="false">
+													<label class="form-check-label" for="exampleRadios2">
+														Inactive</label>
+												</div>
+
+											</div>
+
+
+
+											<div class="row">
+
+												<div class="mb-3 col">
+
+
+													<label> stock</label> <input type="number" name="stock"
+														class="form-control">
+
+
+												</div>
+												<div class="mb-3 col">
+
+
+													<label>Upload Image </label> <input type="file"
+														name="file" class="form-control">
+
+
+												</div>
+
+
+
+
+
+
+
+
+
+
+
+											</div>
+
+
+
+
+
+
+											<button class="btn btn-primary col-md-12">Submit</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										</form>
+
+
+
+
+
+
+
+
+
+
+									</div>
+
+
+
+
+
+
+
+
+
+
+								</div>
+
+
+
+
+
+
+
+
+							</div>
+
+
+
+
+
+
+
+						</div>
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+	</section>
+</body>
+</html>

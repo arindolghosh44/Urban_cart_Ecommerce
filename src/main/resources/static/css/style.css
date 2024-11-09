@@ -1,0 +1,81 @@
+@charset "ISO-8859-1";
+
+
+
+.card-sh {
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.cat-div{
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+
+
+.error {
+	color: red;
+}
+
+
+
+.card-gh{
+	
+	 box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+	
+	
+	
+	  padding: 0 !important;
+	  
+	  
+	  
+	   margin: 3rem !important;
+	
+	
+	
+	 margin-top: 0 !important;
+	 
+	 
+	  background-color: #17a2b8 !important;
+	  
+	  
+	  
+	  
+	    border-radius: 0.25rem !important;
+	    
+	    
+	    
+	  
+	
+}
+
+
+
+
+.error {
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

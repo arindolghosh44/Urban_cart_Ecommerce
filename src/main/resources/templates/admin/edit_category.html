@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//:www.thymeLeaf.org"
+	th:replace="~{base::Layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+
+
+		<div class="container" style="margin-top: 70px">
+
+
+			<div class="card shadow-sm p-0 m-5 mt-0 bg-body-tertiary rounded">
+
+
+				<div class="card-body">
+
+
+					<div class="container-fluid p-5 ">
+
+						<div class="row">
+
+							<div class="col-md-6  offset-md-3">
+
+								<div class="card bg-info shadow-lg  p-0 m-5 mt-0">
+
+									<div class="card-header text-center fs-4 bg-primary">
+										Edit Category
+
+										<th:block th:if="${session.succMsg}">
+
+											<p class="text-warning text-striped fw-bold">[[${session.succMsg}]]</p>
+											<th:block th:text="${@commonServiceImple.removeSessionMsg()}"></th:block>
+										</th:block>
+
+										<th:block th:if="${session.errorMsg}">
+
+											<p class="text-danger fw-bold">[[${session.errorMsg}]]</p>
+											<!-- In case of bean the first later is small -->
+											<th:block th:text="${@commonServiceImple.removeSessionMsg()}"></th:block>
+										</th:block>
+
+									</div>
+									<div class="card-body bg-info">
+
+
+										<form action="/admin/updateCategory" method="post"
+											enctype="multipart/form-data">
+											  <input type="hidden" name="id" th:value="${category.id}">
+
+											<div class="mb-3">
+
+												<!-- 	//by using "category" we can get the get all the from database and show it in the html page -->
+												<label> Enter Category</label> <input type="text"
+													th:value="${category.name}" name="name"
+													class="form-control">
+
+
+											</div>
+
+
+
+											<div class="mb-3">
+
+
+												<label> Status</label>
+												<div class="form-check">
+													<input class="form-check-input" type="radio"
+														th:checked="${category.isActive==true}" name="isActive"
+														id="exampleRadios1" value="true"> <label
+														class="form-check-label" for="exampleRadios1">Active
+													</label>
+												</div>
+												<div class="form-check">
+													<input class="form-check-input" type="radio"
+														th:checked="${category.isActive==false}" name="isActive"
+														id="exampleRadios2" value="false"> <label
+														class="form-check-label" for="exampleRadios2">
+														Inactive</label>
+												</div>
+
+											</div>
+											<div class="mb-3 col">
+
+
+												<label>Upload Image </label> <input type="file" name="file"
+													class="form-control">
+
+
+											</div>
+
+
+											<div class="text-center">
+												<img
+													th:src="@{'/img/Category_image/'+${category.imageName}}"
+													width="100px" height="100px">
+
+											</div>
+
+
+
+
+
+
+
+
+
+
+										
+
+											<button class="btn btn-primary col-md-12 mt-2">Update</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+										</form>
+
+
+
+
+
+
+
+
+
+
+									</div>
+
+
+
+
+
+
+
+
+
+
+								</div>
+
+
+
+
+
+
+
+
+							</div>
+
+
+
+
+
+						</div>
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+		</div>
+
+
+	</section>
+</body>
+</html>
